@@ -1,6 +1,6 @@
 {
   "name": "@mindik/mailgun-nestjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dynamic module mailgun.js for nestjs",
   "author": "Anton Starenkov",
   "homepage": "https://github.com/Mindik/mailgun-nestjs#readme",
