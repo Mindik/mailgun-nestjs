@@ -34,6 +34,14 @@ npm i @mindik/mailgun-nestjs
 
 ## Quick Start
 
+Add in your tsconfig.json
+
+```json
+{
+  "esModuleInterop": true
+}
+```
+
 Import the module and pass options to it
 
 ```TypeScript
