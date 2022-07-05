@@ -1,9 +1,9 @@
-import Client from 'mailgun.js/lib/client';
+import Client from 'mailgun.js/client';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Test } from '@nestjs/testing';
 import { MAILGUN_TOKEN, MailgunModule } from './';
 
-describe('Mailchimp forRoot', () => {
+describe('Mailgun forRoot', () => {
   let mailgunService: Client;
 
   beforeEach(async () => {
@@ -25,7 +25,7 @@ describe('Mailchimp forRoot', () => {
   });
 });
 
-describe('Mailchimp forRootAsync', () => {
+describe('Mailgun forRootAsync', () => {
   let mailgunService: Client;
 
   beforeEach(async () => {
@@ -51,7 +51,7 @@ describe('Mailchimp forRootAsync', () => {
   });
 });
 
-describe('Mailchimp forRootAsync imports ConfigModules', () => {
+describe('Mailgun forRootAsync imports ConfigModules', () => {
   let mailgunService: Client;
 
   beforeEach(async () => {

@@ -1,10 +1,10 @@
-import { Injectable, Inject, Logger } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { MAILGUN_OPTIONS } from './mailgun.constants';
 import { MailgunOptions } from './mailgun.interfaces';
 
 import formData from 'form-data';
 import Mailgun from 'mailgun.js';
-import Client from 'mailgun.js/lib/client';
+import Client from 'mailgun.js/client';
 
 interface IMailgunNestjsService {
   instance(): Promise<Client>;
