@@ -1,13 +1,13 @@
 import { Injectable, Inject } from '@nestjs/common';
+import { IMailgunClient } from 'mailgun.js/Interfaces';
 import { MAILGUN_OPTIONS } from './mailgun.constants';
 import { MailgunOptions } from './mailgun.interfaces';
 
 import formData from 'form-data';
 import Mailgun from 'mailgun.js';
-import Client from 'mailgun.js/client';
 
 interface IMailgunNestjsService {
-  instance(): Promise<Client>;
+  instance(): Promise<IMailgunClient>;
 }
 
 @Injectable()
@@ -17,7 +17,7 @@ export class MailgunService implements IMailgunNestjsService {
     this.mailgun = new Mailgun(formData).client(options);
   }
 
-  async instance(): Promise<Client> {
+  async instance(): Promise<IMailgunClient> {
     return this.mailgun;
   }
 }
