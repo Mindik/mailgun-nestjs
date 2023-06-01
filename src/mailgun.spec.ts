@@ -1,17 +1,17 @@
-import Client from 'mailgun.js/client';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Test } from '@nestjs/testing';
+import { IMailgunClient } from 'mailgun.js/Interfaces';
 import { MAILGUN_TOKEN, MailgunModule } from './';
 
 describe('Mailgun forRoot', () => {
-  let mailgunService: Client;
+  let mailgunService: IMailgunClient;
 
   beforeEach(async () => {
     const moduleRef = await Test.createTestingModule({
       imports: [MailgunModule.forRoot({ username: 'api', key: 'key-yourkeyhere' })],
     }).compile();
 
-    mailgunService = moduleRef.get<Client>(MAILGUN_TOKEN);
+    mailgunService = moduleRef.get<IMailgunClient>(MAILGUN_TOKEN);
   });
 
   describe('mailgunService', () => {
@@ -26,7 +26,7 @@ describe('Mailgun forRoot', () => {
 });
 
 describe('Mailgun forRootAsync', () => {
-  let mailgunService: Client;
+  let mailgunService: IMailgunClient;
 
   beforeEach(async () => {
     const moduleRef = await Test.createTestingModule({
@@ -37,7 +37,7 @@ describe('Mailgun forRootAsync', () => {
       ],
     }).compile();
 
-    mailgunService = moduleRef.get<Client>(MAILGUN_TOKEN);
+    mailgunService = moduleRef.get<IMailgunClient>(MAILGUN_TOKEN);
   });
 
   describe('mailgunService', () => {
@@ -52,7 +52,7 @@ describe('Mailgun forRootAsync', () => {
 });
 
 describe('Mailgun forRootAsync imports ConfigModules', () => {
-  let mailgunService: Client;
+  let mailgunService: IMailgunClient;
 
   beforeEach(async () => {
     const moduleRef = await Test.createTestingModule({
@@ -69,7 +69,7 @@ describe('Mailgun forRootAsync imports ConfigModules', () => {
       ],
     }).compile();
 
-    mailgunService = moduleRef.get<Client>(MAILGUN_TOKEN);
+    mailgunService = moduleRef.get<IMailgunClient>(MAILGUN_TOKEN);
   });
 
   describe('mailgunService', () => {

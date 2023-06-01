@@ -1,8 +1,8 @@
 import { ModuleMetadata, Type } from '@nestjs/common/interfaces';
-import Options from 'mailgun.js/interfaces/Options';
+import { MailgunClientOptions } from 'mailgun.js/Types/MailgunClient';
 
 // tslint:disable-next-line:no-empty-interface
-export interface MailgunOptions extends Options {}
+export interface MailgunOptions extends MailgunClientOptions {}
 
 export interface MailgunOptionsFactory {
   createMailgunOptions(): Promise<MailgunOptions> | MailgunOptions;
